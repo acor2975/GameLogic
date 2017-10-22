@@ -19,6 +19,11 @@ namespace GameLogic
             Human.PhysicalAttack(Dolly);
             Human.PhysicalAttack(Dolly);
             Console.WriteLine(Dolly);
+
+            if(Dolly.IsAlive == false)
+            {
+                Console.WriteLine("omae wa mou shindeiru");
+            }
             Console.ReadKey();
         }
     }

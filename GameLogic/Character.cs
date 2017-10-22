@@ -12,14 +12,16 @@ namespace GameLogic
         public int Health;
         public int Mana;
         public int Strenght;
+        public int Intelect;
         public bool IsAlive;
 
-        public Character(string Name, int Health, int Mana, int Strenght)
+        public Character(string Name, int Health, int Mana, int Strenght, int Intelect)
         {
             this.Name = Name;
             this.Health = Health;
             this.Mana = Mana;
             this.Strenght = Strenght;
+            this.Intelect = Intelect;
             this.IsAlive = true;
         }
 
@@ -40,7 +42,7 @@ namespace GameLogic
 
         public override string ToString()
         {
-            return String.Format("Name = {0}\nHealth = {1}\nMana = {2}\nStrenght = {3}\nIsAlive = {4}\n", this.Name, this.Health, this.Mana, this.Strenght, this.IsAlive);
+            return String.Format("Name = {0}\nHealth = {1}\nMana = {2}\nStrenght = {3}\nIntelect = {4}\nIsAlive = {5}\n", this.Name, this.Health, this.Mana, this.Strenght, this.Intelect, this.IsAlive);
         }
 
 

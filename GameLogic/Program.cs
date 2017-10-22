@@ -10,8 +10,8 @@ namespace GameLogic
     {
         static void Main(string[] args)
         {
-            Monster Dolly = new Monster("dollynho", 12, 3, 1);
-            Hero Human = new Hero("Saitama", 100, 40, 5);
+            Monster Dolly = new Monster("dollynho", 12, 3, 1, 10);
+            Hero Human = new Hero("Saitama", 100, 40, 5, 15);
             Console.WriteLine(Human);
             Console.WriteLine(Dolly);
 

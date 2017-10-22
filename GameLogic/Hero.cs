@@ -8,7 +8,7 @@ namespace GameLogic
 {
     class Hero : Character
     {
-        public Hero(string Name, int Health, int Mana, int Strenght) : base(Name, Health, Mana, Strenght)
+        public Hero(string Name, int Health, int Mana, int Strenght, int Intelect) : base(Name, Health, Mana, Strenght, Intelect)
         {
         }
     }

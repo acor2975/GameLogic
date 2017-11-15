@@ -40,6 +40,26 @@ namespace GameLogic
             }
         }
 
+        public void MagicalAttack(Character AttackedChar)
+        {
+            int damage = this.Intelect;
+
+            if (damage >= AttackedChar.Health)
+            {
+                AttackedChar.Health = 0;
+                AttackedChar.IsAlive = false;
+            }
+            else
+            {
+                AttackedChar.Health = AttackedChar.Health - damage;
+            }
+        }
+
+        public void Buff(Character BuffedChar)
+        {
+            
+        }
+
         public override string ToString()
         {
             return String.Format("Name = {0}\nHealth = {1}\nMana = {2}\nStrenght = {3}\nIntelect = {4}\nIsAlive = {5}\n", this.Name, this.Health, this.Mana, this.Strenght, this.Intelect, this.IsAlive);

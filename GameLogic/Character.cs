@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameLogic
 {
-    class Character
+    abstract class Character
     {
         public string Name;
         public int Health;
@@ -14,9 +14,13 @@ namespace GameLogic
         public int Strenght;
         public int Intelect;
         public bool IsAlive;
+        public Skill MainSkill;
+        public Skill SecondarySkill;
 
-        public Character(string Name, int Health, int Mana, int Strenght, int Intelect)
+        public Character(string Name, int Health, int Mana, int Strenght, int Intelect, Skill MainSkill, Skill SecondarySkill)
         {
+            this.MainSkill = MainSkill;
+            this.SecondarySkill = SecondarySkill;
             this.Name = Name;
             this.Health = Health;
             this.Mana = Mana;
@@ -25,9 +29,9 @@ namespace GameLogic
             this.IsAlive = true;
         }
 
-        public void PhysicalAttack(Character AttackedChar)
+        public void PhysicalAttack(Character AttackedChar, int Modifier)
         {
-            int damage = this.Strenght;
+            int damage = this.Strenght + Modifier;
 
             if (damage >= AttackedChar.Health)
             {
@@ -40,9 +44,9 @@ namespace GameLogic
             }
         }
 
-        public void MagicalAttack(Character AttackedChar)
+        public void MagicalAttack(Character AttackedChar, int Modifier)
         {
-            int damage = this.Intelect;
+            int damage = this.Intelect + Modifier;
 
             if (damage >= AttackedChar.Health)
             {

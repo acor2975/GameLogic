@@ -55,9 +55,61 @@ namespace GameLogic
             }
         }
 
-        public void Buff(Character BuffedChar)
+        public void Buff(Character BuffedChar, Attributes Attr, int Value)
         {
-            
+            switch (Attr)
+            {
+                case Attributes.Health:
+                    BuffedChar.Health = BuffedChar.Health + Value;
+                    break;
+                case Attributes.Intelect:
+                    BuffedChar.Intelect = BuffedChar.Intelect + Value;
+                    break;
+                case Attributes.Mana:
+                    BuffedChar.Mana = BuffedChar.Mana + Value;
+                    break;
+                case Attributes.Strenght:
+                    BuffedChar.Strenght = BuffedChar.Strenght + Value;
+                    break;
+            }
+        }
+
+        public void Debuff(Character DebuffedChar, Attributes Attr, int Value)
+        {
+            switch (Attr)
+            {
+
+                case Attributes.Health:
+                    if (Value >= DebuffedChar.Health)
+                    {
+                        DebuffedChar.Health = 0;
+                        DebuffedChar.IsAlive = false;
+                    }
+                    else
+                    {
+                        DebuffedChar.Health = DebuffedChar.Health - Value;
+                    }
+                    break;
+                case Attributes.Intelect:
+                    DebuffedChar.Intelect = DebuffedChar.Intelect - Value;
+                    break;
+                case Attributes.Mana:
+                    DebuffedChar.Mana = DebuffedChar.Mana - Value;
+                    break;
+                case Attributes.Strenght:
+                    DebuffedChar.Strenght = DebuffedChar.Strenght + Value;
+                    break;
+            }
+        }
+
+        public void Buff(Attributes Attr, int Value)
+        {
+            this.Buff(this, Attr, Value);
+        }
+
+        public void Debuff(Attributes Attr, int Value)
+        {
+            this.Debuff(this, Attr, Value);
         }
 
         public override string ToString()

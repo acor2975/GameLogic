@@ -15,10 +15,10 @@ namespace GameLogic
             Console.WriteLine(Human);
             Console.WriteLine(Dolly);
 
-            Human.PhysicalAttack(Dolly);
-            Human.PhysicalAttack(Dolly);
-            Human.PhysicalAttack(Dolly);
+            Human.Buff(Attributes.Strenght, 10);
+            Human.Debuff(Dolly, Attributes.Health, 100);
             Console.WriteLine(Dolly);
+            Console.WriteLine(Human);
 
             if(Dolly.IsAlive == false)
             {
